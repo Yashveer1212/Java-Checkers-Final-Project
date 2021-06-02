@@ -150,5 +150,7 @@ class Main
 
 		// Later skater:
 		System.out.println("\nThank you for playing checkers!");
+    System.out.println("\nBy Yashveer Sekhon, AP CSA, Period 5")
+
   	}
 }
