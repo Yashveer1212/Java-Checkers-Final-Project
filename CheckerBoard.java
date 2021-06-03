@@ -14,7 +14,7 @@ class CheckerBoard
     //******************************************************
 	public CheckerBoard()
 	{
-        scan = new Scanner(System.in);
+     scan = new Scanner(System.in);
 		board = new CheckerPiece[8][8];
         jumpHappened = false;
 
@@ -391,7 +391,7 @@ class CheckerBoard
     }
 
     //***************************************************************
-    // Quick ol' method to get the game coords from the actual coords
+    // Quick method to get the game coords from the actual coords
     //***************************************************************
     public static void setVariableNamedJumpToPosition(int num, int num2)
     {
