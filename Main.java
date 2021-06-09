@@ -43,7 +43,7 @@ class Main
 		while (answer.equalsIgnoreCase("yes"))
 		{
             int count = 0;
-			board.displayBoard(); // first board showing
+			    board.displayBoard(); // first board showing
             while (playing) // each turn
 			{
                 CheckerBoard.jumpHappened = false;
@@ -109,7 +109,7 @@ class Main
 				if (board.winConditionsMet())
 				{
                     playing = false;
-					System.out.println(board.getWinner() + " is the winner. GG");
+					System.out.println(board.getWinner() + " is the winner. Good Game");
                     break;
 				}
                 count++; // changes turn.

@@ -4,8 +4,8 @@ class CheckerBoard
     public static CheckerPiece[][] board;
     public static boolean jumpHappened;
     public static String jumpToPosition = "";
-    private char[] letters = new char[]{'h','g','f','e','d','c','b','a'};
-	  private int[] numberIndex = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
+    private char[] letters = new char[]{'h','g','f','e','d','c','b','a'};//Rows
+	  private int[] numberIndex = new int[]{1, 2, 3, 4, 5, 6, 7, 8};//Collums 
 	  private String winner;
     private Scanner scan;
 	
@@ -23,11 +23,11 @@ class CheckerBoard
 			for (int j = 0; j < 8; j++)
 			{
                 if((i < 3) && (i % 2 == 0 && j%2 == 1 || i == 1 && j%2 == 0))
-                    board[i][j] = new CheckerPiece("RD");
+                    board[i][j] = new CheckerPiece("RD");//Red Piece
                 else
                 {
                     if((i > 4) && (i % 2 == 1 && j%2 ==0 || i == 6 && j%2 == 1))
-                        board[i][j] = new CheckerPiece("WT");
+                        board[i][j] = new CheckerPiece("WT");//White Piece
                     else
 				        board[i][j] = new CheckerPiece("  ");
                 }
@@ -50,7 +50,7 @@ class CheckerBoard
                     System.out.println();
 			}
 		}
-        System.out.println("   A   B   C   D   E   F   G   H");
+        System.out.println("   A   B   C   D   E   F   G   H");// How to identify the rows
 	}
 
     //******************************************
@@ -116,8 +116,7 @@ class CheckerBoard
     //******************************************************************
     // This method checks if a move was moved into Kings' Row.
     // This is called in UpdateBoard, so after the piece is moved.
-    // If a normal piece was moved into the opposing side's Kings' row,
-    // then it becomes a piece.
+    // If a normal piece was moved into the opposing side's Kings' row, then it becomes a piece.
     //******************************************************************
     public void checkKingsRow()
     {
@@ -151,10 +150,7 @@ class CheckerBoard
         to = to.toLowerCase();
 
         int num, num2, num3, num4;    
-        // num  - horizonal component of initial pos
-        // num2 - vertical conponent of initial pos
-        // num3 - horizonal component of final pos
-        // num4 - vertical conponent of final pos
+
 
         String numVals = getNums(from, to);
         num = numVals.charAt(0) - '0';
@@ -227,21 +223,7 @@ class CheckerBoard
                     jumpHappened = true;
                     return true;
                 }
-                // for(int i = 0; i < 8; i++)
-                // {
-                //     for (int j = 0; j < 8; j++)
-                //     {
-                //         if(i == num6 && j == num5)
-                //         {
-                //             if(!(board[i][j].getColor().equals(Main.switchColor)))
-                //             {     
-                //                 board[i][j].setColor("  ");
-                //                 jumpHappened = true;
-                //                 return true;
-                //             }
-                //         }
-                //     }
-                // }
+
             }
             System.out.println("Error: Move is too far.");
             return false;     
@@ -294,12 +276,6 @@ class CheckerBoard
         int num = numVals.charAt(0) - '0';
         int num2 = numVals.charAt(1) - '0';
 
-        // System.out.println("startpos: " + num + " " + num2);
-    
-        // (num - 2 and num2 - 2 (top left) == blank space) && (num-1 and num2-1 == opposite color piece)
-        // (num - 2 and num2 + 2 (bot left) == blank space) && (num-1 and num2+1 == opposite color piece)
-        // (num + 2 and num2 - 2 (top right) == blank space) && (num+1 and num2-1 == opposite color piece)
-        // (num + 2 and num2 + 2 (bot right) == blank space) && (num+1 and num2+1 == opposite color piece)
 
         // White jumps
         if (Main.switchColor.equals("WT") || board[num2][num].getColor().charAt(1) == 'K')
@@ -308,8 +284,7 @@ class CheckerBoard
             // if num-2 and num2-2 is a blank space, num-1 and num2-1 are NOT the same color or blank.
             if (num2 - 2 > -1 && num - 2 > -1)
             {
-                // System.out.println((num2-2) + " " + (num-2) + " color is " + board[num2-2][num-2].getColor());
-                // System.out.println("num-1 num2-1 color is " + board[num-1][num2-1].getColor());
+
                 if (board[num2-2][num-2].getColor().equals("  ") && !(board[num2-1][num-1].getColor().equals(Main.switchColor) || (board[num2-1][num-1].getColor().equals("  "))))
                 {
                     //System.out.println("joe ");
@@ -359,33 +334,7 @@ class CheckerBoard
         
         }
 
-        
-        // System.out.println("Have you prayed today?");
-        /*
-        a3 b4
-        f6 e5
-        b4 a5
-        b6 c5
-        b2 a3
-        c7 b6
-        c1 b2
-        e5 f4
-        * g3 e5
-        yes
-        e7 f6
-        h2 g3
-        d8 e7
-        c7 d8
-        f6 e5
-        d8 c7
-
-
-
-
-
-
-
-        */
+      
 
         return false;
     }
@@ -438,10 +387,7 @@ class CheckerBoard
     public void jump(String from, String to)
     {
         int num, num2, num3, num4;    
-        // num  - horizonal component of initial pos
-        // num2 - vertical conponent of initial pos
-        // num3 - horizonal component of final pos
-        // num4 - vertical conponent of final pos
+
 
         String numVals = getNums(from, to);
         num = numVals.charAt(0) - '0';

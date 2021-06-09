@@ -11,7 +11,7 @@ class CheckerPiece extends Piece
     }
 
     //***************************************************
-	// Checks if white has valid moves for win condition.
+	  // Checks if white has valid moves for win condition.
     // If all existing pieces do not have valid moves. 
     //***************************************************
 	public static boolean WhiteNoValidMoves()
@@ -27,44 +27,6 @@ class CheckerPiece extends Piece
                 
             }
         }
-        /*
-        for (int i = 0; i < 8; i++)
-		{
-			for (int j = 0; j < 8; j++)
-			{
-				if (CheckerBoard.board[i][j].getColor().equals("[WT]")) // get position of piece
-                {
-                    try {
-                        if (CheckerBoard.board[i-1][j-1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                    try {
-                        if (CheckerBoard.board[i+1][j-1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                }
-                else if (CheckerBoard.board[i][j].getColor().equals("[WK]"))
-                {
-                    try {
-                        if (CheckerBoard.board[i-1][j-1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                    try {
-                        if (CheckerBoard.board[i+1][j-1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                }
-			}
-		}
-        */
 
 		return returnVal;
 	}
@@ -76,44 +38,6 @@ class CheckerPiece extends Piece
 	{
 		boolean returnVal = false;
 
-        /*
-        for(int i = 0; i < 8; i++)
-		{
-			for (int j = 0; j < 8; j++)
-			{
-				if (CheckerBoard.board[i][j].getColor().equals("[RD]")) // get position of piece
-                {
-                    try {
-                        if (CheckerBoard.board[i-1][j+1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                    try {
-                        if (CheckerBoard.board[i+1][j+1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                }
-                else if (CheckerBoard.board[i][j].getColor().equals("[RK]"))
-                {
-                    try {
-                        if (CheckerBoard.board[i-1][j+1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                    try {
-                        if (CheckerBoard.board[i+1][j+1].getColor() == null)
-                            returnVal = true;
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        // do nothing
-                    }
-                }
-			}
-		}
-        */
 
 		return returnVal;
 	}
