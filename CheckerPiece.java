@@ -70,7 +70,7 @@ class CheckerPiece extends Piece
 	}
 
     //*************************************************
-	// Checks if red has valid moves for win condition.
+	  // Checks if red has valid moves for win condition.
     //*************************************************
 	public static boolean RedNoValidMoves()
 	{

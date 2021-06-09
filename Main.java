@@ -126,14 +126,7 @@ class Main
                 answer = scan.nextLine();
             }
 
-            /*
-            b2 c3
-            d8 c7
-            c3 b4
-            c7 b6
-            b4 c5
-            b6 d4
-            */
+
 
             if (answer.equalsIgnoreCase("yes"))
             {
@@ -144,7 +137,6 @@ class Main
 		}
 		//****************
 
-		// Later skater:
 		System.out.println("\nThank you for playing checkers!");
     System.out.println("\nBy Yashveer Sekhon, AP CSA, Period 5");
 
